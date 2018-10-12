@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit()" #newProductForm="ngForm">
+  <br><br>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="name">Product Name</label>
+      <input type="text" class="form-control" id="productname"
+              required
+              [(ngModel)]="model.productname" name="productname"
+              #productname="ngModel">
+      <div [hidden]="productname.valid || productname.pristine"
+            class="alert alert-danger">
+        Product Name is required
+      </div>
+    </div>
+    <div class="col-md-6">
+      <input type="text" placeholder="Product Price"/>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-md-6">
+        Product Image
+        <input type="file" />
+      </div>
+      <div class="col-md-2">
+        <button type="submit" class="btn btn-primary">SUBMIT</button>
+      </div>
+  </div>
+</form>

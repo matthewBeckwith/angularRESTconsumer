@@ -31,4 +31,17 @@ export class HomeComponentComponent implements OnInit {
       () => console.log('done loading products')
     );
   }
+
+  deleteProduct(id) {
+    this.productService.deleteProduct(id).subscribe(
+      result => {
+        console.log(result);
+      },
+      err => console.log(err),
+      () => {
+        console.log('Done Deleting Product');
+        this.getAllProducts();
+      }
+    );
+  }
 }

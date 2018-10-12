@@ -8,7 +8,7 @@ export interface Product {
 }
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + environment.API_TOKEN })
 };
 
 @Injectable()
@@ -24,5 +24,9 @@ export class ProductsService {
 
   getProduct(id) {
     return this.http.get<Product>(this.URL + 'products/' + id);
+  }
+
+  deleteProduct(id) {
+    return this.http.delete<Product>(this.URL + 'products/' + id, httpOptions);
   }
 }
