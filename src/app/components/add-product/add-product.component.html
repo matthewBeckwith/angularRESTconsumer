@@ -3,27 +3,26 @@
   <div class="row">
     <div class="col-md-6">
       <label for="name">Product Name</label>
-      <input type="text" class="form-control" id="productname"
+      <input type="text" class="form-control" id="name"
               required
-              [(ngModel)]="model.productname" name="productname"
-              #productname="ngModel">
-      <div [hidden]="productname.valid || productname.pristine"
-            class="alert alert-danger">
-        Product Name is required
-      </div>
+              [(ngModel)]="model.name" name="name"
+              #name="ngModel">
+    </div>
+    <div class="col-md-4">
+      <label for="price">Product Price</label>
+      <input type="text" class="form-control" id="price"
+              required
+              [(ngModel)]="model.price" name="price"
+              #price="ngModel">
     </div>
     <div class="col-md-6">
-      <input type="text" placeholder="Product Price"/>
+      <label for="file">Product Image</label>
+      <input type="file" class="form-control" id="file"
+              [(ngModel)]="model.file" name="file"
+              #file="ngModel" style="border:none;">
     </div>
-  </div>
-  <br>
-  <div class="row">
-      <div class="col-md-6">
-        Product Image
-        <input type="file" />
-      </div>
-      <div class="col-md-2">
-        <button type="submit" class="btn btn-primary">SUBMIT</button>
-      </div>
+    <div class="col-md-2" style="padding-top:32px;">
+      <button type="submit" class="btn btn-primary">SUBMIT</button>
+    </div>
   </div>
 </form>
